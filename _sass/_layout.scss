@@ -1,0 +1,605 @@
+@charset "UTF-8";
+
+/**
+ * Reset some basic elements
+ */
+body, footer, nav, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+    margin: 0;
+    padding: 0;
+}
+
+//--------------------General--------------------//
+
+body{
+  font-family: $font;
+  font-size: $font-size;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+main
+{
+  a{
+    font-weight:600;
+    // font-style: italic;
+  }
+
+  a:hover{
+  // text-decoration: underline;
+  color: $grey;
+  }
+}
+
+
+li
+{
+    list-style-type: none;
+}
+
+// footer > li, nav > li
+// {
+//   margin-left: $spacing;
+//   margin-top:10px;
+//   margin-bottom: 10px;
+// }
+
+h1
+{
+  font-family: $header-font;
+  font-size: $h1-size;
+  color: $hope-blue;
+}
+
+h2
+{
+  font-family: $header-font;
+  font-size: $h2-size;
+  font-weight:900;
+  color: $hope-blue;
+}
+
+h3
+{
+  font-size: $h3-size;
+  font-weight: 600;
+}
+
+h4
+{
+  font-size: 1.17em;
+}
+
+// strong
+// {
+//   color: $lightpurple;
+// }
+
+
+
+//--------------------Navbar--------------------//
+
+nav{
+  width: 100%;
+  font-family: $header-font;
+  font-size: $font-size-emp;
+  color: white;
+
+  background: rgba($hope-blue, 0.6);
+  border-top: 2px solid $hope-orange;
+  border-bottom: 1px solid $hope-orange;
+
+  #navLinks
+  {
+    @include display(flex);
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(space-around);
+    padding-left: 100px;
+    padding-right: 100px;
+
+    @media screen and (max-width:$mobile)
+      {
+        @include flex-direction(column);
+      }
+  }
+
+  #anchorFill
+  {
+    width: 42px;
+  }
+
+  #mailIcon
+  {
+    width: 35px;
+    fill: white;
+
+    :hover
+    {
+      fill: $grey;
+    }
+
+  }
+
+
+
+    //--------------------Home Stuff--------------------//
+}
+
+#hopeImage
+{
+    background-image: url("/images/hopeDemo.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+// #rowIcons
+// {
+//     @include display(flex);
+//     @include flex-direction(column);
+//     @include align-items(left);
+//     @include justify-content(justify);
+// }
+//
+// #homeRows
+// {
+//     @include display(flex);
+//     @include flex-direction(column);
+//     @include align-items(right);
+//     @include justify-content(justify);
+// }
+
+#rowContainer
+{
+  svg, g{
+    stroke: #EF6C16;
+    fill: white;
+
+    :hover
+    {
+      stroke: $hope-orange;
+      fill: $hope-orange;
+    }
+}
+
+a {
+  display: block;
+  width:120px;
+  text-align: center;
+}
+}
+
+
+
+#runner
+{
+  width: 61px;
+  height: 80px;
+}
+
+#apple
+{
+  width:83px;
+  height:84px;
+}
+
+#book
+{
+  width:84px;
+  height:42px;
+}
+
+#psi
+{
+  width:84px;
+  height:73px;
+}
+
+#cv
+{
+  width:84px;
+  height:58px;
+}
+
+
+#rowContainer
+{
+  margin: 60px;
+}
+
+.homeRows
+{
+
+    @include display(flex);
+    @include flex-direction(row);
+    @include align-items(center);
+    // @include justify-content(justify);
+    margin-bottom: 60px;
+
+
+    svg
+    {
+      width: 10%;
+      margin-left: 0px;
+    }
+
+    p
+    {
+      margin-left: 30px;
+      margin-right: 15px;
+      width: 90%;
+    }
+
+      @media screen and (max-width:$mobile)
+        {
+          @include flex-direction(column);
+          p
+          {
+            margin-left: 0px;
+            margin-right: 0px;
+          }
+
+          svg
+          {
+            width: 100px;
+            margin-bottom: 30px;
+          }
+        }
+
+
+}
+//--------------------Footer--------------------//
+
+footer
+{
+  @include display(flex);
+  @include flex-direction(row);
+  @include align-items(center);
+  @include justify-content(space-around);
+  padding-left: $spacingx2;
+  padding-right: $spacingx2;
+  margin-top: 120px;
+  // background-image: url("/images/footerTulips.jpg");
+  color: white;
+  font-size: 20px;
+  border-top: 3px solid rgba($hope-blue, .8);
+  background-color: $hope-blue;
+
+
+  div
+  {
+    @include display(flex);
+    @include flex-direction(column);
+    @include align-items(left);
+    @include justify-content(center);
+
+    // padding-left: 60px;
+  }
+  li
+  {
+    padding-left: 60px;
+
+    :hover{
+    text-decoration: underline;
+    }
+  }
+
+  // :last-child
+  // {
+  //   margin-left: auto;
+  // }
+  // svg
+  // {
+  //   &:hover {
+  //       fill: $hope-orange;
+  //   }
+  // }
+
+  #anchorFill
+  {
+    margin-top: 10px;
+    // margin-left: 120px;
+    width: 178px;
+
+  }
+}
+
+
+
+//   //for mobile screens (phone portraits)
+//   @media screen and (max-width:$mobileSmall)
+//     {
+//       li:last-child
+//       {
+//         margin-left: 0px;
+//       }
+//     }
+// }
+//
+// //on large screens only
+// @media screen and (min-width:$mobile)
+// {
+//   footer > li:last-child
+//   {
+//     margin-left: auto;
+//     margin-right: $spacing;
+//   }
+// }
+
+
+
+//
+// nav{
+//   position:relative;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   font-family: $header-font;
+//   font-size: $font-size;
+//   color: $hope-blue;
+//   @include display(flex);
+//   @include flex-direction(row);
+//   @include align-items(center);
+//   @include justify-content(flex-end);
+//   background: white;
+//   border-bottom: 3px double rgba(white, 0.2);
+//
+//   #mailIcon
+//   {
+//     width:$icon-width;
+//     margin-right: $spacing;
+//     fill: $hope-blue;
+//
+//     &:hover {
+//         fill: white;
+//     }
+//   }
+//
+//   //for the on/off hover growing/shinking underline effect
+//   // a
+//   // {
+//   //   p:after {
+//   //     content: '';
+//   // 	  display: block;
+//   // 	  margin: auto;
+//   // 	  height: 2px;
+//   // 	  width: 0px;
+//   // 	  background: transparent;
+//   // 	  transition: width .5s ease, background-color .5s ease;
+//   //      }
+//   //
+//   //   p:hover:after {
+//   // 	   width: 100%;
+//   // 	   background: $lightpurple;
+//   //      }
+//   //    }
+//
+// //Make links larger for tablets
+// @media screen and (max-width:$mobile) and (min-width:$mobileSmall)
+// {
+//     font-size: $font-size-emp;
+// }
+//
+//   }
+//
+//
+// nav > li:first-child
+// {
+//   margin-right: auto;
+// }
+//
+// #logo
+// {
+//   width:59px;
+//   height:39px;
+//
+//   #logoColor
+//   {
+//     fill: $brand-color;
+//   }
+// }
+
+//--------------------Header--------------------//
+header
+{
+  position:relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  @include display(flex);
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(center);
+  @include flex-wrap(wrap);
+}
+
+//--------------------Home--------------------//
+
+
+//fix mobile rendering of the bkg image
+
+@media screen and (max-width:1100px)
+{
+  background-attachment: scroll;
+}
+//
+// //change header text to be more responsive
+//   @media screen and (max-width:700px){
+//     h1{
+//       font-size: $h1-size - ($h1-size * .25);
+//     }
+//     h2{
+//       font-size: $h2-size - ($h2-size * .25);
+//     }
+//   }
+//
+//   @media screen and (max-width:515px){
+//     h1, h2{
+//       text-align: center;
+//     }
+//   }
+// }
+
+// #colIcons
+// {
+//   @include display(flex);
+//   @include flex-direction(row);
+//   @include align-items(center);
+//   @include justify-content(justify);
+//   margin:$spacing;
+//   margin-left:$spacingx2;
+//   margin-right:$spacingx2;
+// }
+//
+// #computerIcon
+// {
+//   @include flex(1);
+//   stroke: $lightpurple;
+//   fill: white;
+// }
+//
+// #artIcon
+// {
+//   @include flex(1);
+//   fill: white;
+//   stroke: $lightpurple;
+//
+//   #pencil
+//   {
+//     fill: $lightpurple;
+//     stroke: white;
+//   }
+// }
+//
+// #bookIcon
+// {
+// @include flex(1.5);
+// fill: white;
+// stroke: $lightpurple;
+// }
+//
+// #columnsFlex
+// {
+//   @include display(flex);
+//   @include flex-direction(row);
+//   @include justify-content(justify);
+//   margin:$spacing;
+//   margin-bottom: $spacingx2;
+//
+//   p{
+//     text-indent: 20px;
+//   }
+//
+//   @media screen and (max-width:$mobile)
+//   {
+//     @include flex-direction(column);
+//     margin: 0;
+//   }
+// }
+//
+// #col1, #col3{
+//   background: $background-color;
+//   padding: $spacing;
+//   margin-left: $spacing;
+//   margin-right: $spacing;
+//   @include flex(1);
+//   color: white;
+//
+//   @media screen and (max-width:$mobile)
+//   {
+//     margin: 0px;
+//     padding-top: $spacingx2;
+//     padding-bottom: $spacingx2;
+//   }
+// }
+//
+// #col2
+// {
+//   @include flex(1.5);
+//   padding: $spacing;
+//   border: 3px solid $background-color;
+//
+//   @media screen and (max-width:$mobile)
+//   {
+//     border: none;
+//     padding-top: $spacingx2;
+//     padding-bottom: $spacingx2;
+//   }
+//
+// }
+//
+// //--------------------Thoughts--------------------//
+//
+// .skylineBkg
+// {
+//   background-image: url("/images/skylineBkg.svg");
+//   background-repeat: no-repeat;
+//   background-position: bottom;
+//   background-attachment: fixed;
+// }
+//
+// .postsList{
+//   position: relative;
+//   @include display(flex);
+//   @include flex-direction(column);
+//   @include align-items(center);
+//   @include justify-content(center);
+//   padding-top: $spacingx2;
+//   padding-bottom: $spacing;
+//   margin-left: 15%;
+//   margin-right: 15%;
+//
+//   //for small screens
+//   @media screen and (max-width:$mobile)
+//   {
+//     h2
+//     {
+//       font-size: $h2-size - ($h2-size * .25);
+//     }
+//     h3
+//     {
+//       font-size: 28px;
+//     }
+//     margin-left: 8%;
+//     margin-right: 8%;
+//   }
+//
+//   h2,h3,h4,p,h1
+//   {
+//     text-align: center;
+//   }
+//
+//
+//   hr{
+//     width: 70%;
+//     margin-left: 15%;
+//     border-top: 3px solid $background-color;
+//     text-align: center;
+//   }
+// }
+//
+// .post
+// {
+//   @extend .postsList;
+//   p
+//   {
+//     text-align: left;
+//   }
+// }
+//
+//
+// /**
+//  * Clearfix
+//  */
+%clearfix {
+
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
